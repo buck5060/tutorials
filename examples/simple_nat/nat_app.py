@@ -25,7 +25,7 @@ nat_mappings = {}
 
 def send_to_CLI(cmd):
     this_dir = os.path.dirname(os.path.realpath(__file__))
-    p = Popen(os.path.join(this_dir, 'sswitch_CLI.sh'), stdout=PIPE, stdin=PIPE)
+    p = subprocess.Popen(os.path.join(this_dir, 'sswitch_CLI.sh'), stdout=subprocess.PIPE, stdin=subprocess.PIPE)
     output = p.communicate(input=cmd)[0]
     # print output
 
